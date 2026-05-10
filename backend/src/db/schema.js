@@ -1,0 +1,45 @@
+export const schema = `
+CREATE TABLE IF NOT EXISTS raw_events (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  source TEXT NOT NULL,
+  payload TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS orders (
+  order_sn TEXT PRIMARY KEY,
+  total_amount REAL DEFAULT 0,
+  currency TEXT DEFAULT '',
+  order_status TEXT DEFAULT '',
+  created_at TEXT DEFAULT '',
+  updated_at TEXT DEFAULT ''
+);
+
+CREATE TABLE IF NOT EXISTS products (
+  item_id TEXT PRIMARY KEY,
+  name TEXT DEFAULT '',
+  sku TEXT DEFAULT '',
+  price REAL DEFAULT 0,
+  stock INTEGER DEFAULT 0,
+  status TEXT DEFAULT '',
+  updated_at TEXT DEFAULT ''
+);
+
+CREATE TABLE IF NOT EXISTS ads (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  campaign_id TEXT DEFAULT '',
+  item_id TEXT DEFAULT '',
+  spend REAL DEFAULT 0,
+  sales REAL DEFAULT 0,
+  impressions INTEGER DEFAULT 0,
+  clicks INTEGER DEFAULT 0,
+  orders INTEGER DEFAULT 0,
+  date TEXT DEFAULT ''
+);
+
+CREATE TABLE IF NOT EXISTS ai_reports (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  report TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+`;

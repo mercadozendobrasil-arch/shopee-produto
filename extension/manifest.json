@@ -1,0 +1,1 @@
+{"manifest_version":3,"name":"Shopee AI Ops Assistant","version":"0.2.0","description":"Shopee seller data sync, metrics and AI suggestions.","permissions":["storage","activeTab"],"host_permissions":["https://*.shopee.com/*","https://*.seller.shopee.*/*","http://localhost:8787/*","https://*.vercel.app/*"],"action":{"default_popup":"popup.html","default_title":"Shopee AI Ops"}}
